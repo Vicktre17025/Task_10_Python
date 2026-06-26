@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="7" time="2.118" timestamp="2026-06-26T22:39:22.756019+03:00" hostname="DESKTOP-GR0OIBT"><testcase classname="Tests_goals.test_create_goal" name="test_post_goal_request" time="0.494"><failure message="assert 403 == 200&#10; +  where 403 = &lt;Response [403]&gt;.status_code">def test_post_goal_request():
+    
+        print("STEP 1: Create Goal")
+    
+        response = requests.post(
+            f"{BASE_URL}/team/{TEAM_ID}/goal",headers=headers_variable,json={
+                "name": GOAL_NAME,
+                "team_id": TEAM_ID
+            }
+        )
+    
+&gt;       assert response.status_code == 200
+E       assert 403 == 200
+E        +  where 403 = &lt;Response [403]&gt;.status_code
+
+Tests_goals\test_create_goal.py:29: AssertionError</failure></testcase><testcase classname="Tests_goals.test_delete_goal" name="test_delete_goal" time="0.175"><failure message="assert 403 == 200&#10; +  where 403 = &lt;Response [403]&gt;.status_code">def test_delete_goal():
+    
+        print("STEP 1: Create Goal")
+    
+        response = requests.post(
+            f"{BASE_URL}/team/{TEAM_ID}/goal",headers=headers_variable,json={
+                "name": GOAL_NAME,
+                "team_id": TEAM_ID
+            }
+        )
+    
+&gt;       assert response.status_code == 200
+E       assert 403 == 200
+E        +  where 403 = &lt;Response [403]&gt;.status_code
+
+Tests_goals\test_delete_goal.py:29: AssertionError</failure></testcase><testcase classname="Tests_goals.test_get_goal" name="test_get_goal" time="0.246"><failure message="assert 403 == 200&#10; +  where 403 = &lt;Response [403]&gt;.status_code">def test_get_goal():
+    
+        print("STEP 1: Create Goal")
+    
+        response = requests.post(
+            f"{BASE_URL}/team/{TEAM_ID}/goal",headers=headers_variable,json={
+                "name": GOAL_NAME,
+                "team_id": TEAM_ID
+            }
+        )
+&gt;       assert response.status_code == 200
+E       assert 403 == 200
+E        +  where 403 = &lt;Response [403]&gt;.status_code
+
+Tests_goals\test_get_goal.py:28: AssertionError</failure></testcase><testcase classname="Tests_goals.test_get_goals" name="test_get_goals" time="0.247" /><testcase classname="Tests_goals.test_negative" name="test_negative" time="0.215"><failure message="assert 403 == 200&#10; +  where 403 = &lt;Response [403]&gt;.status_code">def test_negative():
+    
+        print("STEP 1: Create Goal")
+    
+        response = requests.post(
+            f"{BASE_URL}/team/{TEAM_ID}/goal",headers=headers_variable,json={
+                "name": GOAL_NAME,
+                "team_id": TEAM_ID
+            }
+        )
+    
+&gt;       assert response.status_code == 200
+E       assert 403 == 200
+E        +  where 403 = &lt;Response [403]&gt;.status_code
+
+Tests_goals\test_negative.py:29: AssertionError</failure></testcase><testcase classname="Tests_goals.test_update_goal" name="test_update_goal" time="0.305"><failure message="assert 403 == 200&#10; +  where 403 = &lt;Response [403]&gt;.status_code">def test_update_goal():
+    
+        print("STEP 1: Create Goal")
+    
+        response = requests.post(
+            f"{BASE_URL}/team/{TEAM_ID}/goal",headers=headers_variable,json={
+                "name": GOAL_NAME,
+                "team_id": TEAM_ID
+            }
+        )
+&gt;       assert response.status_code == 200
+E       assert 403 == 200
+E        +  where 403 = &lt;Response [403]&gt;.status_code
+
+Tests_goals\test_update_goal.py:28: AssertionError</failure></testcase><testcase classname="Tests_on_leson_10.Test__goals" name="test_get_goal_request" time="0.001" /></testsuite></testsuites>

@@ -17,13 +17,16 @@ jobs:
             pip install -r requirements.txt
 
       - run:
-          name: Run API tests
-          command: pytest -s
-          environment:
-            BASE_URL: $BASE_URL
-            TOKEN: $TOKEN
-            TEAM_ID: $TEAM_ID
-            GOAL_NAME: $GOAL_NAME
+          name: Run tests
+          command: |
+            mkdir -p test-results
+            pytest -s --junitxml=test-results/results.xml
+
+      - store_test_results:
+          path: test-results
+
+      - store_artifacts:
+          path: test-results
 
 workflows:
   version: 2
