@@ -1,0 +1,32 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/python:3.11
+
+    working_directory: ~/project
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install dependencies
+          command: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+
+      - run:
+          name: Run API tests
+          command: pytest -s
+          environment:
+            BASE_URL: $BASE_URL
+            TOKEN: $TOKEN
+            TEAM_ID: $TEAM_ID
+            GOAL_NAME: $GOAL_NAME
+
+workflows:
+  version: 2
+  test-workflow:
+    jobs:
+      - test
