@@ -17,16 +17,16 @@ jobs:
             pip install -r requirements.txt
 
       - run:
-          name: Run tests
+          name: Run tests and generate report
           command: |
-            mkdir -p test-results
-            pytest -s --junitxml=test-results/results.xml
+            mkdir -p reports
+            pytest -s --junitxml=reports/report.xml
 
       - store_test_results:
-          path: test-results
+          path: reports
 
       - store_artifacts:
-          path: test-results
+          path: reports
 
 workflows:
   version: 2
